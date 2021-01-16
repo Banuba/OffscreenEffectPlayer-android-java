@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">OffscreenPlayerDemo</string>
+    <string name="portrait_orientation_demo">Portrait Orientation</string>
+    <string name="full_sensor_orientation_demo">FullSensor Orientation</string>
+    <string name="default_orientation_demo">Default (Unspecified) Orientation</string>
+
+    <string name="show_effect">Show Effect</string>
+    <string name="hide_effect">Hide Effect</string>
+
+</resources>
