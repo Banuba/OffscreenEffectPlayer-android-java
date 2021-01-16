@@ -12,19 +12,21 @@ Quick start examples for [Offscrren Effect Player from Banuba SDK Android]
 # Web RTC Integration (VideoFrame as Input)
 
   // One time 	
-  offscreenEffectPlayer.setImageProcessListener(result -> { 
-		// Do something with result
-        }, handler);
+  
+  offscreenEffectPlayer.setImageProcessListener(result -> {  
+		// Do something with result  
+        }, handler);  
 
 
-  // For every Frame
-  VideoFrame.I420Buffer i420Buffer = videoframe.getBuffer().toI420();
-  int width = i420Buffer.getWidth();
-  int height = i420Buffer.getHeight();
+  // For every Frame  
+  
+  VideoFrame.I420Buffer i420Buffer = videoframe.getBuffer().toI420();  
+  int width = i420Buffer.getWidth();  
+  int height = i420Buffer.getHeight();  
 
-  final CameraOrientation cameraOrientation = CameraOrientation.values()[videoframe.getRotation() / 90];
-  final FullImageData.Orientation orientation = new FullImageData.Orientation(cameraOrientation, false, 0);
-  final FullImageData fullImageData = new FullImageData(new Size(width, height),
-  i420Buffer.getDataY(), i420Buffer.getDataU(), i420Buffer.getDataV(), i420Buffer.getStrideY(), i420Buffer.getStrideU(), i420Buffer.getStrideV(), 1, 1, 1, orientation);
-
-  offscreenEffectPlayer.processFullImageData(fullImageData, videoframe::release, videoframe.getTimestampNs());
+  final CameraOrientation cameraOrientation = CameraOrientation.values()[videoframe.getRotation() / 90];  
+  final FullImageData.Orientation orientation = new FullImageData.Orientation(cameraOrientation, false, 0);  
+  final FullImageData fullImageData = new FullImageData(new Size(width, height),  
+  i420Buffer.getDataY(), i420Buffer.getDataU(), i420Buffer.getDataV(), i420Buffer.getStrideY(), i420Buffer.getStrideU(), i420Buffer.getStrideV(), 1, 1, 1, orientation);  
+  
+  offscreenEffectPlayer.processFullImageData(fullImageData, videoframe::release, videoframe.getTimestampNs());  
